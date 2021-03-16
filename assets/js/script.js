@@ -2,7 +2,9 @@ var tasks = {};
 
 var createTask = function(taskText, taskDate, taskList) {
   // create elements that make up a task item
-  var taskLi = $("<li>").addClass("list-group-item");
+  var taskLi = $("<li>")
+    .addClass("list-group-item")
+    .text(taskList);
   var taskSpan = $("<span>")
     .addClass("badge badge-primary badge-pill")
     .text(taskDate);
@@ -32,7 +34,7 @@ var loadTasks = function() {
   }
 
   // loop over object properties
-  $.each(tasks, function(list, arr) {
+  tasks.each(tasks, function(list, arr) {
     console.log(list, arr);
 
     // then loop over sub-array

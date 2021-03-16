@@ -141,17 +141,18 @@ $(".list-group").on("click", "span", function() {
   .val(date);
 
 // swap out elements
-  $(this).replaceWith(dataInput);
+  $(this).replaceWith(dateInput);
 
 // automatically focus on the new element
   dateInput.trigger("focus");
-})
+});
 
 // value of due date was changed
 $(".list-group").on("blur", "input[type='text']", function() {
   // get current text
   var date = $(this)
-    .val();
+    .val()
+    .trim();
 
   // get the parent ul's id attribute
   var status = $(this)
@@ -175,7 +176,7 @@ $(".list-group").on("blur", "input[type='text']", function() {
 
   // replace input with span element
   $(this).replaceWith(taskSpan);
-})
+});
 
 // remove all tasks
 $("#remove-tasks").on("click", function() {
